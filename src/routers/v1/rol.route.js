@@ -1,8 +1,9 @@
 import { Router } from "express";
 import { getAll, create } from "../../controller/rol.ctrl.js";
+import { tryCatchCtrl } from "../../utils/tryCatchCtrl.js";
 
 export const rolRoutes = Router();
 
-rolRoutes.get("/", getAll);
+rolRoutes.get("/", tryCatchCtrl(getAll));
 
-rolRoutes.post("/", create);
+rolRoutes.post("/", tryCatchCtrl(create));
