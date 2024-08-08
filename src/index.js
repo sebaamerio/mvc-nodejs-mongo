@@ -3,6 +3,7 @@ import "dotenv/config";
 import { routerV1 } from "./routers/v1/index.route.js";
 import { routerV2 } from "./routers/v2/index.route.js";
 import { handlerError } from "./middlewares/handlerError.js";
+import { dbConnect } from "./config/mongo.js";
 
 const app = express();
 
@@ -12,6 +13,11 @@ app.use("/v2", routerV2);
 
 app.use(handlerError);
 
-app.listen(process.env.PORT, () => {
-  console.log(`server levntado en puerto: ${process.env.PORT}`);
-});
+const init = async () => {
+  await dbConnect();
+  app.listen(process.env.PORT, () => {
+    console.log(`server levntado en puerto: ${process.env.PORT}`);
+  });
+};
+
+init();

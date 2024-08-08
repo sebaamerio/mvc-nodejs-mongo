@@ -1,6 +1,11 @@
 import movieService from "../services/movie.service.js";
 import { responseCtrl } from "../utils/responseCtrl.js";
 
+import {
+  validateMovie,
+  validatePartialMovie,
+} from "../validators/movie.schema.js";
+
 export const getById = async (req, res) => {
   const { id } = req.params;
   const data = await movieService.getById(id);
@@ -21,7 +26,7 @@ export const getAllv2 = async (req, res) => {
 
 export const getFilterTitle = async (req, res) => {
   const { title } = req.query;
-  const data = await movieService.getFilterTitle(title);
+  const data = await movieService.getFilterTitle({ title });
 
   /* Podemos devolver un 200 con un array vacio */
   responseCtrl(res, 200, data);
@@ -30,8 +35,21 @@ export const getFilterTitle = async (req, res) => {
   // if (data.length == 0) throw "Not Found";
 };
 
+export const getFilterType = async (req, res) => {
+  const { type } = req.query;
+
+  const data = await movieService.getFilterType({ type });
+  responseCtrl(res, 200, data);
+};
+
 export const create = async (req, res) => {
-  const movie = req.body;
+  const result = validateMovie(req.body);
+
+  if (!result.success) {
+    throw result.error;
+  }
+
+  const movie = { ...result.data };
   const data = await movieService.create({ movie });
 
   if (data) {

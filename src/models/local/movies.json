@@ -4,7 +4,7 @@
       "title": "The Avengers",
       "year": "2012",
       "id": "1",
-      "type": "movie",
+      "type": 1,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
@@ -13,7 +13,7 @@
       "title": "Avengers: Endgame",
       "year": "2019",
       "id": "2",
-      "type": "movie",
+      "type": 1,
       "genre": ["Actions", "Sci-fi", "Aventure"],
       "duration": 90,
       "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
@@ -22,7 +22,7 @@
       "title": "Avengers: Infinity War",
       "year": "2018",
       "id": "3",
-      "type": "movie",
+      "type": 1,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
@@ -31,7 +31,7 @@
       "title": "Avengers: Age of Ultron",
       "year": "2015",
       "id": "4",
-      "type": "movie",
+      "type": 2,
       "genre": ["Actions", "Sci-fi"],
       "duration": 100,
       "poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg"
@@ -40,7 +40,7 @@
       "title": "The Avengers",
       "year": "1998",
       "id": "5",
-      "type": "movie",
+      "type": 2,
       "genre": ["Actions", "Sci-fi"],
       "duration": 90,
       "poster": "https://m.media-amazon.com/images/M/MV5BZTQ4NmIzMTktOTdjOC00NzE4LWIzNTgtODkwNzM5ZjUzZDkxXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg"
@@ -49,7 +49,7 @@
       "title": "The Avengers: Earth's Mightiest Heroes",
       "year": "2010–2012",
       "id": "6",
-      "type": "series",
+      "type": 2,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BYzA4ZjVhYzctZmI0NC00ZmIxLWFmYTgtOGIxMDYxODhmMGQ2XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
@@ -58,7 +58,7 @@
       "title": "Ultimate Avengers: The Movie",
       "year": "2006",
       "id": "7",
-      "type": "movie",
+      "type": 1,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BMTYyMjk0NTMwMl5BMl5BanBnXkFtZTgwNzY0NjAwNzE@._V1_SX300.jpg"
@@ -67,7 +67,7 @@
       "title": "Ultimate Avengers II",
       "year": "2006",
       "id": "8",
-      "type": "movie",
+      "type": 1,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
@@ -76,7 +76,7 @@
       "title": "The Avengers",
       "year": "1961–1969",
       "id": "9",
-      "type": "series",
+      "type": 2,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BZWQwZTdjMDUtNTY1YS00MDI0LWFkNjYtZDA4MDdmZjdlMDRlXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
@@ -85,7 +85,7 @@
       "title": "Avengers Assemble",
       "year": "2012–2019",
       "id": "10",
-      "type": "series",
+      "type": 2,
       "genre": ["Actions", "Sci-fi"],
       "duration": 120,
       "poster": "https://m.media-amazon.com/images/M/MV5BMTY0NTUyMDQwOV5BMl5BanBnXkFtZTgwNjAwMTA0MDE@._V1_SX300.jpg"

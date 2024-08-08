@@ -4,6 +4,7 @@ import {
   getAll,
   getById,
   getFilterTitle,
+  getFilterType,
   create,
   update,
   remove,
@@ -13,6 +14,7 @@ export const movieRouter = Router();
 
 movieRouter.get("/", tryCatchCtrl(getAll));
 movieRouter.get("/title", tryCatchCtrl(getFilterTitle));
+movieRouter.get("/type", tryCatchCtrl(getFilterType));
 movieRouter.get("/:id", tryCatchCtrl(getById)); // poner como ultima opcion
 
 movieRouter.post("/", tryCatchCtrl(create));

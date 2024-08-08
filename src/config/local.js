@@ -10,4 +10,6 @@ const movies = JSON.parse(
 
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
+
 export const movies = require("../models/local/movies.json");
+export const types = require("../models/local/types.json");

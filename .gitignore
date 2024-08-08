@@ -3,6 +3,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+db_mongo/
 
 # dotenv environment variable files
 .env

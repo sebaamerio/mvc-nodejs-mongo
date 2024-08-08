@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "description": "Movie"
+    },
+    {
+      "id": 2,
+      "description": "Serie"
+    }
+  ]
+}
