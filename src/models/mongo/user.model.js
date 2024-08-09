@@ -1,11 +1,9 @@
 import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
 
 const userSchema = new Schema(
   {
-    id: ObjectId,
     name: {
       type: String,
       required: true,
@@ -18,6 +16,11 @@ const userSchema = new Schema(
       min: 1,
       max: 50,
     },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     date_birth: {
       type: Date,
       required: false,
@@ -26,6 +29,9 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "rol",
       requierd: true,
+    },
+    password: {
+      type: String,
     },
   },
   {
