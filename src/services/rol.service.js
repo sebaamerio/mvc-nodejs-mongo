@@ -1,34 +1,31 @@
 import { rolModel } from "../models/mongo/rol.model.js";
 
 export default class rolService {
-  static async getAll() {
-    return await rolModel.find();
-  }
+	static async getAll() {
+		return await rolModel.find();
+	}
 
-  static async create({ rol }) {
-    console.Console("serv rol", rol);
-    const { description } = rol;
-    console.Console("serv description", description);
-    description;
-    const objRol = new rolModel({
-      description,
-    });
-    await objRol.save();
+	static async create({ rol }) {
+		const existRol = await rolModel.find({ description: rol.description });
+		if (existRol.length > 0) throw "Item exists";
 
-    return objRol;
-
-    // return await rolModel.find();
-
-    //const rol = "llega";
-    //	console.Console("serv rol", rol);
-    //const { description } = rol;
-    //	console.Console("serv ", rol);
-    /*
-		const objRol = new rolModel({
-			description: rol.description,
-		});
+		const objRol = new rolModel(rol);
 		await objRol.save();
-*/
-    //	return rol;
-  }
+
+		return objRol;
+	}
+
+	static async remove({ id }) {
+		const obj = await rolModel.findByIdAndDelete(id, { new: true });
+		return obj;
+	}
+
+	static async edit({ id, rol }) {
+		console.log("servi");
+		const { description } = rol;
+
+		const objRol = await rolModel.findByIdAndUpdate(id, { description }, { new: true });
+		// Si no actualiza devuelve null
+		return objRol;
+	}
 }
