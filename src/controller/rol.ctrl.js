@@ -16,11 +16,7 @@ export const create = async (req, res) => {
 };
 
 export const edit = async (req, res) => {
-	console.log("body : ", req.body);
-
-	console.log("params : ", req.params);
 	const payload_body = validateRol(req.body);
-
 	const payload_id = validateId(req.params);
 
 	if (!payload_body.success) {

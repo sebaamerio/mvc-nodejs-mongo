@@ -21,7 +21,6 @@ export default class rolService {
 	}
 
 	static async edit({ id, rol }) {
-		console.log("servi");
 		const { description } = rol;
 
 		const objRol = await rolModel.findByIdAndUpdate(id, { description }, { new: true });
