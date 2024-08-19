@@ -13,36 +13,10 @@ const userSchema = z.object({
       required_error: "Lastname is required.",
     })
     .max(50),
-  year: z
-    .number({
-      required_error: "Year is required",
-      invalid_type_error: "Year must be a integer",
-    })
-    .int()
-    .min(1900)
-    .max(2024),
-  type: z.number().int().positive(),
-  genre: z.array(
-    z.enum([
-      "Action",
-      "Adventure",
-      "Crime",
-      "Comedy",
-      "Drama",
-      "Fantasy",
-      "Horror",
-      "Thriller",
-      "Sci-fi",
-    ]),
-    {
-      required_error: "Movie genre is required.",
-      invalid_type_error: "Movie genre must be an array of enum Genre",
-    }
-  ),
-  duration: z.number().int().positive(),
-  poster: z.string().url({
-    message: "Poster must be a valid URL",
-  }),
+  email: z.string().email({ message: "Invalid email address" }),
+  date_birth: z.string().date({ message: "Invalid date address" }),
+  rol: z.string().regex(/^[0-9a-f]{24}$/),
+  password: z.string().max(50),
 });
 
 export function validateMovie(object) {
