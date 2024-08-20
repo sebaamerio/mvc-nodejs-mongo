@@ -5,14 +5,16 @@ export default class userService {
 		return await userModel.find();
 	}
 
-	static async create(user) {
-		const { name, lastname, date_birth, rol } = user;
+	static async create({ user }) {
+		console.log("serv : ", user);
+		const { name, lastname, date_birth, rol, password } = user;
 
 		const objUser = new userModel({
 			name,
 			lastname,
 			date_birth,
 			rol,
+			password,
 		});
 		await objUser.save();
 		return objUser;
