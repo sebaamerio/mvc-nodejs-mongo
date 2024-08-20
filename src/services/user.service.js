@@ -1,22 +1,41 @@
 import { userModel } from "../models/mongo/user.model.js";
 
 export default class userService {
-	static async getAll() {
-		return await userModel.find();
-	}
+  static async getAll() {
+    const data = await userModel.aggregate([
+      {
+        $lookup: {
+          from: "rols",
+          localField: "rol",
+          foreignField: "_id",
+          as: "rolMAP",
+        },
+      },
+    ]);
 
-	static async create({ user }) {
-		console.log("serv : ", user);
-		const { name, lastname, date_birth, rol, password } = user;
+    return data;
+  }
 
-		const objUser = new userModel({
-			name,
-			lastname,
-			date_birth,
-			rol,
-			password,
-		});
-		await objUser.save();
-		return objUser;
-	}
+  static async create({ user }) {
+    const { name, lastname, email, date_birth, rol, password } = user;
+
+    const existEmail = await userModel.find({ email });
+    if (existEmail.length > 0) throw "Email exists";
+
+    const objUser = new userModel({
+      name,
+      lastname,
+      email,
+      date_birth,
+      rol,
+      password,
+    });
+    await objUser.save();
+    return objUser;
+  }
+
+  static async remove({ id }) {
+    const obj = await userModel.findByIdAndDelete(id, { new: true });
+    return obj;
+  }
 }
