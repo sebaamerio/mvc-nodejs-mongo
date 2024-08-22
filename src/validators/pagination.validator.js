@@ -1,12 +1,10 @@
 import { z } from "zod";
 
 const paginationSchema = z.object({
-	limit: z.int({
-		invalid_type_error: "limit must be a int",
+	limit: z.string({
 		required_error: "limit is required.",
 	}),
-	skip: z.int({
-		invalid_type_error: "skip must be a int",
+	skip: z.string({
 		required_error: "skip is required.",
 	}),
 });

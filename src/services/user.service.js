@@ -16,11 +16,7 @@ export default class userService {
 		return data;
 	}
 
-	static async getAllpagination({ pagination }) {
-		{
-			limit, skip;
-		}
-
+	static async getAllpagination({ limit, skip }) {
 		const data = await userModel
 			.aggregate([
 				{
@@ -59,5 +55,17 @@ export default class userService {
 	static async remove({ id }) {
 		const obj = await userModel.findByIdAndDelete(id, { new: true });
 		return obj;
+	}
+
+	static async edit({ id, user }) {
+		const { name, lastname, email, date_birth, rol, password } = user;
+
+		const objUser = await userModel.findByIdAndUpdate(
+			id,
+			{ name, lastname, email, date_birth, rol, password },
+			{ new: true }
+		);
+
+		return objUser;
 	}
 }
